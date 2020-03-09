@@ -5,8 +5,8 @@ export const fetchDeck = payload => ({
   payload
 });
 
-export const fetchCard = payload => ({
-  type: "FETCH_CARD",
+export const fetchCards = payload => ({
+  type: "FETCH_CARDS",
   payload
 });
 
@@ -20,11 +20,13 @@ export const getDeck = () => (dispatch, GetState) => {
     });
 };
 
-export const getCard = deckId => (dispatch, getState) => {
+export const getCards = (deckId, numberOfCard) => (dispatch, getState) => {
   request
-    .get(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`)
+    .get(
+      `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=${numberOfCard}`
+    )
     .then(response => {
-      const action = fetchCard(response.body);
+      const action = fetchCards(response.body);
       dispatch(action);
     });
 };

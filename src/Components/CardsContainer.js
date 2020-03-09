@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getDeck, getCard } from "../actions/cardsActions";
+import { getDeck, getCards } from "../actions/cardsActions";
 import Cards from "./Cards";
 
 export class CardsContainer extends Component {
@@ -8,14 +8,18 @@ export class CardsContainer extends Component {
     this.props.getDeck();
   }
 
-  drawCard = () => {
-    this.props.getCard(this.props.cards.deck.deck_id);
+  drawCard = numberOfCard => {
+    this.props.getCards(this.props.cards.deck.deck_id, numberOfCard);
   };
 
   render() {
     return (
       <div>
-        <Cards drawCard={this.drawCard} cards={this.props.cards.list} />
+        <Cards
+          drawCard={() => this.drawCard(1)}
+          cards={this.props.cards.list}
+          draw4Card={() => this.drawCard(4)}
+        />
       </div>
     );
   }
@@ -27,7 +31,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getDeck,
-  getCard
+  getCards
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardsContainer);
