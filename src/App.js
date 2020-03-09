@@ -8,7 +8,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        HELLO! THIS IS HOMEPAGE
         <Route exact path="/" component={LoginFormContainer} />
         <Route exact path="/homepage" component={Homepage} />
         <Route exact path="/signup" component={SignUpFormContainer} />
