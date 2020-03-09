@@ -3,8 +3,8 @@ import request from "superagent";
 export const JWT = "JWT";
 export const SIGN_UP = "SIGN_UP";
 
-const baseUrl = "https://murmuring-plains-65052.herokuapp.com";
-// const baseUrl = "http://localhost:4000"
+//const baseUrl = "https://murmuring-plains-65052.herokuapp.com";
+const baseUrl = "http://localhost:4000";
 
 function loginUser(payload) {
   return {
