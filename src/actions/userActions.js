@@ -22,7 +22,7 @@ function newUser(payload) {
 export const signUp = data => dispatch => {
   console.log("this is", data);
   request
-    .post(`${baseUrl}/user`)
+    .post(`${baseUrl}/signup`)
     .send(data)
     .then(res => {
       const action = newUser(res.body);

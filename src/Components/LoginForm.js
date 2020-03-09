@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class LoginForm extends Component {
   render() {
@@ -24,6 +25,11 @@ export default class LoginForm extends Component {
         />
         <form />
         <button onClick={this.props.onSubmit}>Submit</button>
+        <h3>
+          <Link to="/signup">
+            If you don't have an account with us click here to signup
+          </Link>{" "}
+        </h3>
       </div>
     );
   }
