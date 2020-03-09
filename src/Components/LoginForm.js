@@ -4,8 +4,9 @@ export default class LoginForm extends Component {
   render() {
     return (
       <div>
+        <h1>Login</h1>
         <form onSubmit={this.props.onSubmit} />
-        <h1>EMAIL</h1>
+        <h3>EMAIL</h3>
         <input
           type="text"
           name="email"
@@ -13,7 +14,7 @@ export default class LoginForm extends Component {
           onChange={this.props.onChange}
           values={this.props.values}
         />
-        <h1>PASSWORD</h1>
+        <h3>PASSWORD</h3>
         <input
           type="password"
           name="password"
