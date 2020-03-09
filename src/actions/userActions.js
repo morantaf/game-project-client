@@ -40,7 +40,7 @@ export const login = data => (dispatch, getState) => {
       .post(`${baseUrl}/login`)
       .send(data)
       .then(res => {
-        const action = loginUser(res.body);
+        const action = loginUser(res.body.jwt);
         dispatch(action);
       })
       .catch(console.error);

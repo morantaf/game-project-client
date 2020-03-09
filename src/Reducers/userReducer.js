@@ -1,4 +1,4 @@
-import { JWT, SIGN_UP } from "../actions";
+import { JWT, SIGN_UP } from "../actions/userActions";
 
 const initialState = {
   auth: "",
