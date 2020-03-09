@@ -36,11 +36,12 @@ export const login = data => (dispatch, getState) => {
   if (!state) {
     console.log("does not exist");
   } else {
+    console.log("user", data);
     request
       .post(`${baseUrl}/login`)
       .send(data)
       .then(res => {
-        const action = loginUser(res.body.jwt);
+        const action = loginUser(res.body);
         dispatch(action);
       })
       .catch(console.error);
