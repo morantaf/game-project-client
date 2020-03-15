@@ -1,7 +1,7 @@
 import { JWT, SIGN_UP } from "../actions/userActions";
 
 const initialState = {
-  auth: "",
+  auth: "blabla",
   createdUser: "",
   loggedInUser: ""
 };
@@ -12,7 +12,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         auth: action.payload.jwt,
-        loggedInUser: action.payload.user
+        loggedInUser: action.payload.username
       };
     }
     case SIGN_UP: {

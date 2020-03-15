@@ -4,6 +4,8 @@ import "./App.css";
 import { Route } from "react-router";
 import Homepage from "./Components/Homepage";
 import SignUpFormContainer from "./Components/SignUpFormContainer";
+import Room from "./Components/Room";
+
 class App extends Component {
   render() {
     return (
@@ -11,6 +13,7 @@ class App extends Component {
         <Route exact path="/" component={LoginFormContainer} />
         <Route exact path="/homepage" component={Homepage} />
         <Route exact path="/signup" component={SignUpFormContainer} />
+        <Route path="/rooms/:roomId" component={Room} />
       </div>
     );
   }

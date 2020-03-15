@@ -37,7 +37,6 @@ export const login = data => (dispatch, getState) => {
   if (!state) {
     console.log("does not exist");
   } else {
-    console.log("user", data);
     request
       .post(`${baseUrl}/login`)
       .send(data)

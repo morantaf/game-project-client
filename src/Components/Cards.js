@@ -10,7 +10,6 @@ export default class Cards extends Component {
 
         <div>
           <button onClick={this.props.drawCard}>Draw</button>
-          <button onClick={this.props.draw4Card}>Start the game</button>
         </div>
       </div>
     );
